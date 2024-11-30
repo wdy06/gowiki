@@ -1,5 +1,53 @@
-<h1>{{.Title}}</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .edit-link {
+            margin: 20px 0;
+        }
+        .edit-link a {
+            color: #0066cc;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #0066cc;
+            border-radius: 3px;
+        }
+        .edit-link a:hover {
+            background-color: #0066cc;
+            color: white;
+        }
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>{{.Title}}</h1>
 
-<p>[<a href="/edit/{{.Title}}">Edit</a>]</p>
+    <div class="edit-link">
+        <a href="/edit/{{.Title}}">Edit</a>
+    </div>
 
-<div>{{printf "%s" .Body}}</div>
+    <div class="content">
+        {{printf "%s" .Body}}
+    </div>
+</body>
+</html>
